@@ -5,7 +5,7 @@ import { Nav, NavItem, NavLink, Button, TabContent, TabPane, } from 'reactstrap'
 
 import { Company, QuickQuotes, Bids, Inventory, Reports, InboundStock, Settings, ConsigneePortal } from '@components/test'
 
-const CustomTabs = () => {
+const Tabbar = () => {
   const tabs = useSelector(
     (state) => state.test.tabs
   )
@@ -37,23 +37,24 @@ const CustomTabs = () => {
 
   return (
     <div>
-      <Nav tabs>
-        {tabs.map((tab, i) => (
+      <Nav className="auto-w mr-auto ml-auto" tabs>
+         {tabs.map((tab, i) => (
           <NavItem key={i}>
-            <NavLink
-              className={currentTab === tab ? 'active' : ''}
+            <Button
+              color={currentTab === tab ? 'primary' : 'secondary'}
               onClick={() => move(tab)}
+              className="rounded-0"
+              id={tab === 'home' ? "home" : ""}
             >
               {tab}
               {tab !== 'home' && (
-                <Button onClick={() => closeOne(tab)} className='ms-1' close>
-                </Button>
+                <span onClick={() => closeOne(tab)} className='ms-1 text-white'>x</span>
               )}
-            </NavLink>
+            </Button>
           </NavItem>
         ))}
         <NavItem>
-          <Button onClick={() => closeAll()} className="btn btn-danger p-1" close type="button"></Button>
+          <Button onClick={() => closeAll()} className="btn-close p-1" close type="button">x</Button>
         </NavItem>
       </Nav>
       <TabContent activeTab={currentTab}>
@@ -86,4 +87,4 @@ const CustomTabs = () => {
   );
 };
 
-export default CustomTabs
+export default Tabbar

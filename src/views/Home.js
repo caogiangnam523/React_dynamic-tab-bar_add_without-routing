@@ -23,7 +23,7 @@ import UpdateModalComponent from "@src/views/ui-elements/UpdateScreen";
 import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addTab } from "@src/redux/test";
-import CustomTab from "./ui-elements/CustomTab";
+import Tabbar from "./ui-elements/Tabbar";
 
 const ExcessDashboard = () => {
   // ** Context
@@ -98,7 +98,7 @@ const ExcessDashboard = () => {
 
   return (
     <div id="dashboard-ecommerce">
-      <CustomTab />
+      <Tabbar />
       <UpdateModalComponent />
       { currentTab === 'home' && (
         <Fragment>

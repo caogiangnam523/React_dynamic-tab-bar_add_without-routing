@@ -27,3 +27,24 @@
   top: 10px;
   right: 10px;
 }
+
+// Add styles for tab bar
+
+  #home{
+    border-top-left-radius: 0.357rem !important;
+    border-bottom-left-radius: 0.357rem !important;
+  }
+
+ .btn-close{
+  height: 0.72rem !important;
+  display: flex;
+  align-items: center;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: red;
+  opacity: 1;
+  background-image:none;
+  color: white;
+  font-size: large;
+ }
+

@@ -3,7 +3,23 @@
 .nav {
   border-radius: 0.25rem;
   // for component navs
+  &.auto-w{
+    width: 80%;
+  }
+
+  &.ml-auto{
+    margin-left:auto;
+  }
+
+  &.mr-auto{
+    margin-right:auto;
+  }
+
+  &.alignCenter{
+    align-items: center;
+  }
   // to wrap border around nav component
+
   &.wrap-border {
     border: 1px solid $nav-component-border-color;
     li.nav-header {
@@ -67,6 +83,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #A5A5A5;
+    //color: white;
+    //border-radius: 0.2rem;
     i,
     svg {
       margin-right: 0.5rem;
@@ -162,7 +181,7 @@
     }
     &.active {
       position: relative;
-      color: $primary;
+      color: $activeCol;
 
       &:after {
         transform: translate3d(0, 0, 0);
@@ -184,7 +203,7 @@
     .nav-item {
       a.nav-link {
         display: block;
-        border-radius: 0;
+        border-radius: 0.5rem;
 
         &.active {
           border: none;
